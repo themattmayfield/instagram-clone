@@ -26,17 +26,17 @@ const Footer = ({ update }) => {
       link: "/",
     },
     {
-      icon: <FiSearch className="text-xl cursor-pointer" />,
+      icon: <FiSearch className="text-2xl cursor-pointer" />,
       label: "Discover",
       link: "/",
     },
     {
-      icon: <BsPlayFill className="text-2xl cursor-pointer" />,
+      icon: <BsPlayFill className="text-3xl cursor-pointer" />,
       label: "",
       link: "/",
     },
     {
-      icon: <IoBagHandleOutline className="text-xl cursor-pointer" />,
+      icon: <IoBagHandleOutline className="text-2xl cursor-pointer" />,
       label: "Inbox",
       link: "/",
     },
@@ -53,7 +53,7 @@ const Footer = ({ update }) => {
   ];
   return (
     <>
-      <footer className="flex bg-black items-start pt-2 justify-between w-full h-16 text-white text-xs px-6 border-t-[.01px] border-[#222423]">
+      <footer className="flex bg-black items-start pt-2 justify-between w-full h-20 text-white text-xs px-6 border-t-[.01px] border-[#222423]">
         {footerItems.map((item, index) => (
           <IconContainer {...item} />
         ))}
@@ -74,7 +74,7 @@ const Default = () => (
   <div className="">
     <img
       src={`/Headshots/me.png`}
-      className="rounded-full w-5 h-5 object-cover "
+      className="rounded-full w-6 h-6 object-cover "
     />
   </div>
 );

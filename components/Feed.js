@@ -18,11 +18,11 @@ const Feed = () => {
             />
             <div className="flex items-center justify-between px-3 py-2.5">
               <div className="flex items-center space-x-3 ">
-                <AiOutlineHeart className="text-white text-xl" />
-                <BiMessageRounded className="text-white text-xl" />
-                <IoPaperPlaneOutline className="text-white text-lg" />
+                <AiOutlineHeart className="text-white text-2xl" />
+                <BiMessageRounded className="text-white text-2xl" />
+                <IoPaperPlaneOutline className="text-white text-xl" />
               </div>
-              <BiBookmark className="text-white text-lg" />
+              <BiBookmark className="text-white text-xl" />
             </div>
 
             <Likes id={data.id} />
@@ -41,12 +41,12 @@ export default Feed;
 
 const Story = ({ data }) => (
   <div className="flex items-center justify-between pt-2 pb-2 px-2 ">
-    <div className="flex items-center space-x-1.5">
+    <div className="flex items-center space-x-2.5">
       <img
         src={`/Headshots/${data.storyUrl}.jpg`}
-        className="rounded-full w-8 h-8 object-cover ring-2 ring-red-800"
+        className="rounded-full w-9 h-9 object-cover ring-2 ring-red-800"
       />
-      <div className="text-white text-[10px]">
+      <div className="text-white text-xs">
         <p className="font-bold">{data.name}</p>
         <p>{data.location}</p>
       </div>
@@ -71,7 +71,7 @@ const Likes = ({ id }) => (
           )
       )}
     </div>
-    <p className="text-white text-xs">
+    <p className="text-white text-sm">
       Liked by <span className="font-bold">papacodes</span> and{" "}
       <span className="font-bold">
         {Math.floor(Math.random() * (100 - 1) + 1)} others
@@ -81,7 +81,7 @@ const Likes = ({ id }) => (
 );
 
 const Caption = ({ name, caption }) => (
-  <div className="flex items-centered text-white px-3 text-xs pb-1">
+  <div className="flex items-centered text-white px-3 text-sm pb-1">
     <p>
       <span className="font-bold">{name} </span>
       {caption}
@@ -91,14 +91,14 @@ const Caption = ({ name, caption }) => (
 
 const Comments = ({ comment }) => (
   <div className="flex flex-col space-y-0.5 px-3 pb-3">
-    <p className="text-gray-600 text-[10px]">
+    <p className="text-gray-600 text-xs">
       View all {Math.floor(Math.random() * (10 - 1) + 1)} comments
     </p>
     <div className="flex items-center justify-between">
-      <p className="text-xs text-white">
+      <p className="text-sm text-white">
         <span className="font-bold">papacodes </span> {comment}
       </p>
-      <AiOutlineHeart className="text-xs text-white" />
+      <AiOutlineHeart className="text-sm text-white" />
     </div>
   </div>
 );
@@ -110,18 +110,18 @@ const AddComment = () => (
         src={`/Headshots/me.png`}
         className="rounded-full w-6 h-6 object-cover "
       />
-      <p className="text-gray-600 text-[10px]">Add comment...</p>
+      <p className="text-gray-600 text-xs">Add comment...</p>
     </div>
     <div className="flex items-center space-x-3">
-      <ImHeart className="text-red-600 text-xs" />
-      <AiFillFire className="text-[#db8340] text-xs" />
-      <BsPlusCircle className="text-gray-500 text-xs" />
+      <ImHeart className="text-red-600 text-sm" />
+      <AiFillFire className="text-[#db8340] text-sm" />
+      <BsPlusCircle className="text-gray-500 text-sm" />
     </div>
   </div>
 );
 
 const Posted = () => (
-  <p className="text-[10px] text-gray-600 px-3">
+  <p className="text-xs text-gray-600 px-3">
     {Math.floor(Math.random() * (5 - 1) + 1)} hours ago
   </p>
 );

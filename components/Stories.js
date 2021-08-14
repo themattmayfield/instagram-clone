@@ -29,9 +29,9 @@ const Story = ({ data }) => (
   <div className="flex flex-col items-center space-y-1.5">
     <img
       src={`/Headshots/${data.storyUrl}.jpg`}
-      className="rounded-full w-12 h-12 object-cover ring-2 ring-red-800"
+      className="rounded-full w-[70px] h-[70px] object-cover ring-2 ring-red-800"
     />
-    <p className="text-white text-[8px]">{data.name}</p>
+    <p className="text-white text-[10px]">{data.name}</p>
   </div>
 );
 
@@ -44,10 +44,10 @@ const NewStory = () => (
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-12 h-12 rounded-full bg-white relative mr-1"
+      className="w-[70px] h-[70px] rounded-full bg-white relative mr-1"
     >
       <HiPlus className=" text-white bg-blue-600 absolute bottom-0 right-0 rounded-full" />
     </div>
-    <p className="text-gray-300 text-[8px]">Your Story</p>
+    <p className="text-gray-300 text-[10px]">Your Story</p>
   </div>
 );
