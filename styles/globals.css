@@ -1,0 +1,26 @@
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media screen and (display-mode: standalone) {
+  header {
+    padding-top: 44px !important;
+    padding-bottom: 8px !important;
+  }
+}
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
