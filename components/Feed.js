@@ -8,30 +8,28 @@ const Feed = () => {
   return (
     <div className="flex-1">
       {[...IGData].map((data, index) => (
-        <>
-          <div key={data.id} className="pb-3">
-            <Story key={data.id} data={data} />
+        <div key={data.id} className="pb-3">
+          <Story key={data.id} data={data} />
 
-            <img
-              className="max-h-[500px] w-full object-cover "
-              src={`/Posts/${data.postUrl}.jpg`}
-            />
-            <div className="flex items-center justify-between px-3 py-2.5">
-              <div className="flex items-center space-x-3 ">
-                <AiOutlineHeart className="text-white text-2xl" />
-                <BiMessageRounded className="text-white text-2xl" />
-                <IoPaperPlaneOutline className="text-white text-xl" />
-              </div>
-              <BiBookmark className="text-white text-xl" />
+          <img
+            className="max-h-[500px] w-full object-cover "
+            src={data.postUrl}
+          />
+          <div className="flex items-center justify-between px-3 py-2.5">
+            <div className="flex items-center space-x-3 ">
+              <AiOutlineHeart className="text-white text-2xl" />
+              <BiMessageRounded className="text-white text-2xl" />
+              <IoPaperPlaneOutline className="text-white text-xl" />
             </div>
-
-            <Likes id={data.id} />
-            <Caption name={data.name} caption={data.caption} />
-            <Comments comment={data.comment} />
-            <AddComment />
-            <Posted />
+            <BiBookmark className="text-white text-xl" />
           </div>
-        </>
+
+          <Likes id={data.id} />
+          <Caption name={data.name} caption={data.caption} />
+          <Comments comment={data.comment} />
+          <AddComment />
+          <Posted />
+        </div>
       ))}
     </div>
   );
@@ -43,7 +41,7 @@ const Story = ({ data }) => (
   <div className="flex items-center justify-between pt-2 pb-2 px-2 ">
     <div className="flex items-center space-x-2.5">
       <img
-        src={`/Headshots/${data.storyUrl}.jpg`}
+        src={data.storyUrl}
         className="rounded-full w-9 h-9 object-cover ring-2 ring-red-800"
       />
       <div className="text-white text-xs">
@@ -63,7 +61,8 @@ const Likes = ({ id }) => (
           data.id != id &&
           i < 4 && (
             <img
-              src={`/Headshots/${data.storyUrl}.jpg`}
+              key={data.id}
+              src={data.storyUrl}
               className={`rounded-full w-4 h-4 object-cover absolute z-20 ${
                 i == 2 && "left-6 z-10"
               } ${i == 3 && "left-9 z-0"}`}
@@ -106,10 +105,7 @@ const Comments = ({ comment }) => (
 const AddComment = () => (
   <div className="px-3 flex items-center justify-between pb-1.5">
     <div className="flex items-center space-x-3">
-      <img
-        src={`/Headshots/me.png`}
-        className="rounded-full w-6 h-6 object-cover "
-      />
+      <img src={`/me.png`} className="rounded-full w-6 h-6 object-cover " />
       <p className="text-gray-600 text-xs">Add comment...</p>
     </div>
     <div className="flex items-center space-x-3">

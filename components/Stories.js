@@ -28,8 +28,8 @@ const Container = ({ children }) => (
 const Story = ({ data }) => (
   <div className="flex flex-col items-center space-y-1.5">
     <img
-      src={`/Headshots/${data.storyUrl}.jpg`}
-      className="rounded-full w-[70px] h-[70px] object-cover ring-2 ring-red-800"
+      src={data.storyUrl}
+      className="rounded-full w-[60px] h-[60px] object-cover ring-[2.5px] ring-red-800"
     />
     <p className="text-white text-[10px]">{data.name}</p>
   </div>
@@ -39,14 +39,14 @@ const NewStory = () => (
   <div className="flex flex-col items-center space-y-1.5">
     <div
       style={{
-        backgroundImage: "url(" + "/Headshots/me.png" + ")",
+        backgroundImage: "url(" + "/me.png" + ")",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-[70px] h-[70px] rounded-full bg-white relative mr-1"
+      className="w-[60px] h-[60px] rounded-full bg-white relative mr-1"
     >
-      <HiPlus className=" text-white bg-blue-600 absolute bottom-0 right-0 rounded-full" />
+      <HiPlus className="text-lg ring-4 ring-black text-white bg-blue-600 absolute bottom-0 right-0 rounded-full" />
     </div>
     <p className="text-gray-300 text-[10px]">Your Story</p>
   </div>

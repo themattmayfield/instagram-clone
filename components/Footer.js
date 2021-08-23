@@ -7,7 +7,6 @@ import { BsPlayFill } from "react-icons/bs";
 
 const Footer = ({ update }) => {
   const router = useRouter();
-  console.log(router);
   const footerItems = [
     {
       icon: (
@@ -55,7 +54,7 @@ const Footer = ({ update }) => {
     <>
       <footer className="flex bg-black items-start pt-2 justify-between w-full h-20 text-white text-xs px-6 border-t-[.01px] border-[#222423]">
         {footerItems.map((item, index) => (
-          <IconContainer {...item} />
+          <IconContainer key={index} {...item} />
         ))}
       </footer>
     </>
@@ -72,9 +71,6 @@ export default Footer;
 
 const Default = () => (
   <div className="">
-    <img
-      src={`/Headshots/me.png`}
-      className="rounded-full w-6 h-6 object-cover "
-    />
+    <img src={`/me.png`} className="rounded-full w-6 h-6 object-cover " />
   </div>
 );
